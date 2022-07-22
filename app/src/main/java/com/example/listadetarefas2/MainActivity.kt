@@ -8,17 +8,16 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-val btnIncluirTarefa:Button =findViewById(R.id.btnIncluirTarefa)
+        val btnIncluirTarefa: Button = findViewById(R.id.btnIncluirTarefa)
 
-btnIncluirTarefa.setOnClickListener {
-    val intent=Intent(this,tela_inclusao_activity::class.java)
-    startActivity(intent)
-}
+        btnIncluirTarefa.setOnClickListener {
+            val intent = Intent(this, Tela_inclusao_activity::class.java)
+            startActivity(intent)
+        }
 
     }
 
