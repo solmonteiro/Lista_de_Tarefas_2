@@ -21,6 +21,7 @@ open class MainActivity : AppCompatActivity() {
         val toolbar=findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        toolbar.overflowIcon=getDrawable(R.drawable.ic_more_vert)
 
         btnIncluirTarefa.setOnClickListener {
             val intent = Intent(this, Tela_inclusao_activity::class.java)

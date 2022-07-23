@@ -28,8 +28,7 @@ class Tela_inclusao_activity : MainActivity() {
         val toolbar=findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        val btn_cancelarinclusao: Button = findViewById(R.id.btn_cancelarinclusao)
+        toolbar.overflowIcon=getDrawable(R.drawable.ic_more_vert)
 
         val myCalendar = Calendar.getInstance()
         val myCalendar2 = Calendar.getInstance()
@@ -52,11 +51,6 @@ class Tela_inclusao_activity : MainActivity() {
         actionBar!!.title="Tela de Inclusão"
         actionBar.setDisplayHomeAsUpEnabled(true)*/
 
-
-        btn_cancelarinclusao.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
 
         et_datainicial.setOnClickListener {
 

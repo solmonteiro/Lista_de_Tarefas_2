@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/drawable/spinner_bg.xml" value="0.12" />
-        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/activity_tela_inclusao.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/activity_tela_inclusao.xml" value="0.1" />
         <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/tela_inclusao.xml" value="0.203125" />
+        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/layout/tollbar.xml" value="0.203125" />
+        <entry key="..\:/Users/nunes/Documents/Apps/ListadeTarefas2/app/src/main/res/menu/main_menu.xml" value="0.203125" />
       </map>
     </option>
   </component>
