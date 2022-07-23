@@ -12,7 +12,7 @@ import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Tela_inclusao_activity : AppCompatActivity() {
+class Tela_inclusao_activity : MainActivity() {
 
 
     private lateinit var et_datainicial: EditText
@@ -24,6 +24,11 @@ class Tela_inclusao_activity : AppCompatActivity() {
 
         et_datainicial = findViewById(R.id.et_datainicial)
         et_datafinal = findViewById(R.id.et_datafinal)
+
+        val toolbar=findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val btn_cancelarinclusao: Button = findViewById(R.id.btn_cancelarinclusao)
 
         val myCalendar = Calendar.getInstance()

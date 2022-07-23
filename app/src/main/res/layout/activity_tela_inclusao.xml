@@ -7,14 +7,7 @@
     android:orientation="vertical"
     tools:context=".Tela_inclusao_activity">
 
-
-    <Toolbar
-
-        android:id="@+id/tb_inclusao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="?attr/actionBarSize"/>
-
+<include layout="@layout/toolbar"/>
 
     <LinearLayout
         android:layout_width="match_parent"
