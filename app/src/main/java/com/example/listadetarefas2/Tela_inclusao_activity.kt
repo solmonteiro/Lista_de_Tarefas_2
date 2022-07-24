@@ -3,11 +3,18 @@ package com.example.listadetarefas2
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import java.text.SimpleDateFormat
 import java.util.*
 
 class Tela_inclusao_activity : MainActivity() {
+
+
+    private lateinit var et_areaVida:EditText
+    private lateinit var et_objetivo:EditText
+    private lateinit var et_tarefa:EditText
+    private lateinit var btn_salvar:Button
 
 
     private lateinit var et_datainicial: EditText
@@ -18,13 +25,17 @@ class Tela_inclusao_activity : MainActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inclusao)
 
+        et_areaVida=findViewById(R.id.et_areaVida)
+        et_objetivo=findViewById(R.id.et_objetivo)
+        et_tarefa=findViewById(R.id.et_tarefa)
+        btn_salvar=findViewById(R.id.btn_salvar)
         et_datainicial = findViewById(R.id.et_datainicial)
         et_datafinal = findViewById(R.id.et_datafinal)
 
         val toolbar=findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        toolbar.overflowIcon=getDrawable(R.drawable.ic_more_vert)
+        toolbar.overflowIcon=getDrawable(R.drawable.ic_more_vert) /*ícone branco*/
 
         val myCalendar = Calendar.getInstance()
         val myCalendar2 = Calendar.getInstance()
@@ -43,9 +54,10 @@ class Tela_inclusao_activity : MainActivity() {
         }
 
 
-        /** val actionBar =supportActionBar
-        actionBar!!.title="Tela de Inclusão"
-        actionBar.setDisplayHomeAsUpEnabled(true)*/
+        btn_salvar.setOnClickListener{
+            salvarTarefa()
+
+        }
 
 
         et_datainicial.setOnClickListener {
@@ -61,6 +73,18 @@ class Tela_inclusao_activity : MainActivity() {
                 this,datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),
                 myCalendar2.get(Calendar.DAY_OF_MONTH)).show()
         }
+
+    }
+
+    private fun salvarTarefa(){
+
+        val tarefa=Tarefa (
+            area_vida = et_areaVida.text.toString(),
+            objetivo = et_objetivo.text.toString(),
+            tarefa = et_objetivo.text.toString()
+        )
+
+
 
     }
 
