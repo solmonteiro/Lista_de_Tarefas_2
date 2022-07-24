@@ -9,8 +9,8 @@
         android:icon="@drawable/ic_search"/>
 
     <item
-        android:id="@+id/func1"
-        android:title="Funcionalidade 1"/>
+        android:id="@+id/incluir_Tarefa"
+        android:title="Incluir Tarefa"/>
 
     <item
         android:id="@+id/func2"

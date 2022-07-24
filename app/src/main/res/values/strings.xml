@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">Lista de Tarefas#2</string>
-    <string name="lista_de_tarefas">LISTA DE TAREFAS</string>
-    <string name="o_que_eu_quero_ser">O QUE EU QUERO SER</string>
-    <string name="para_isso_eu_preciso_de">PARA ISSO EU PRECISO DE</string>
-    <string name="por_isso_vou">POR ISSO VOU</string>
+    <string name="app_name">MINHAS METAS</string>
+    <string name="incluir_meta">INCLUIR META</string>
+
 </resources>

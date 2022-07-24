@@ -1,14 +1,9 @@
 package com.example.listadetarefas2
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
-import android.widget.Toolbar
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
-import net.yslibrary.android.keyboardvisibilityevent.util.UIUtil
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -18,6 +13,7 @@ class Tela_inclusao_activity : MainActivity() {
     private lateinit var et_datainicial: EditText
     private lateinit var et_datafinal:EditText
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela_inclusao)
