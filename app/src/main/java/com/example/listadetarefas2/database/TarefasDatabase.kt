@@ -10,8 +10,8 @@ class TarefasDatabase(
 
     override fun onCreate(db: SQLiteDatabase?) {
         val sql ="""
-        CREATE TABLE TB_CONTATOS(
-        ID INTEGER PRIMARY KEY AUTOIMCREMENT,
+        CREATE TABLE TB_TAREFAS(
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
         AREA TEXT,
         OBJETIVO TEXT,
         TAREFA TEXT
@@ -19,13 +19,11 @@ class TarefasDatabase(
         """.trimIndent()
 
         db?.execSQL(sql)
-
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-        db.execSQL("DROP TABLE IF EXISTS TB_TAREFAS")
+        db?.execSQL("DROP TABLE IF EXISTS TB_TAREFAS")
         onCreate(db)
     }
-
 
 }
