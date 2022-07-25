@@ -15,6 +15,10 @@ class TarefaViewHolder(view:View):RecyclerView.ViewHolder(view){
         textViewobjetivo.text=item.objetivo
         textViewtarefa.text=item.tarefa
 
+        itemView.setOnClickListener {
+            item.onClick?.invoke(item.id)
+        }
+
     }
 
 

@@ -20,6 +20,8 @@ class Tela_inclusao_activity : MainActivity() {
     private lateinit var btn_salvar: Button
 
     private lateinit var database: TarefasDatabase
+    private var idtarefa: Int? = null
+
 
     private lateinit var et_datainicial: EditText
     private lateinit var et_datafinal: EditText
@@ -80,6 +82,9 @@ class Tela_inclusao_activity : MainActivity() {
                 myCalendar2.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
+
+        idtarefa = intent.getIntExtra("ID_TAREFA", -1)
+/*acrescentar código para chamar dados*/
 
     }
 

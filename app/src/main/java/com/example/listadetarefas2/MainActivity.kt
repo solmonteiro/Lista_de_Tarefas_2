@@ -9,11 +9,15 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listadetarefas2.database.TarefasDatabase
+import com.example.listadetarefas2.database.selecionarTarefas
 
 open class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private val tarefaAdapter = TarefaAdapter()
+
+    private lateinit var database: TarefasDatabase
 
     @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,24 +32,32 @@ open class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter=tarefaAdapter
+        recyclerView.adapter = tarefaAdapter
 
-        val tarefas=listOf(
-            Tarefa("PROFISSIONAL","Programador Júnior","Estudar Kotlin"),
-            Tarefa("SAÚDE FÍSICA E MENTAL","Equilíbrio psíquico","Estudar Kotlin"),
-            Tarefa("EDUCAÇÃO","Licenciado em Música","Matricular"),
-            Tarefa("FINANCEIRA","Reserva financeira","Arrumar novo trabalho")
-        )
+        database = TarefasDatabase(this)
+
+        val tarefas = database.selecionarTarefas()
 
         tarefaAdapter.updateItems(tarefas)
-
     }
+
+
+    override fun onResume() {
+        super.onResume()
+
+        val tarefas = database.selecionarTarefas().map {
+            it.copy(onClick = ::abrirDetalhes)
+
+        }
+        tarefaAdapter.updateItems(tarefas)
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
-
     }
+
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.search -> {
@@ -65,5 +77,15 @@ open class MainActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
+
+
+    private fun abrirDetalhes(idtarefa: Int?) {
+        val intent = Intent(this, Tela_inclusao_activity::class.java)
+        intent.putExtra("ID_TAREFA",idtarefa)
+
+        startActivity(intent)
+
+    }
+
 
 }
